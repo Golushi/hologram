@@ -63,7 +63,7 @@ controls.enableDamping = true;
  * Renderer
  */
 const rendererParameters = {};
-rendererParameters.clearColor = "#1d1f2a";
+rendererParameters.clearColor = "#000000";
 
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
@@ -82,7 +82,7 @@ gui.addColor(rendererParameters, "clearColor").onChange(() => {
  */
 
 const materialParameters = {};
-materialParameters.color = "#70c1ff";
+materialParameters.color = "#33b1ff";
 
 gui.addColor(materialParameters, "color").onChange(() => {
   material.uniforms.uColor.value.set(materialParameters.color);
@@ -140,8 +140,8 @@ const tick = () => {
 
   // Rotate objects
   if (suzanne) {
-    suzanne.rotation.x = -elapsedTime * 0.1;
-    suzanne.rotation.y = elapsedTime * 0.2;
+    suzanne.rotation.x = -elapsedTime * 0.01;
+    suzanne.rotation.y = elapsedTime * 0.08;
   }
 
   sphere.rotation.x = -elapsedTime * 0.1;
